@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{097063AA-4D23-406B-9721-C83D0452295B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>AutoFacPractice1</RootNamespace>
-    <AssemblyName>AutoFacPractice1</AssemblyName>
+    <ProjectGuid>{E3FC0F10-B4D4-42BA-A654-23FE65DF32EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoFacPractice1.BL</RootNamespace>
+    <AssemblyName>AutoFacPractice1.BL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,17 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CompanyParsers\AnotherCompanyParser.cs" />
+    <Compile Include="CompanyParsers\CompanyParser.cs" />
+    <Compile Include="IUserSource.cs" />
+    <Compile Include="MainProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AutoFacPractice1.BL\AutoFacPractice1.BL.csproj">
-      <Project>{e3fc0f10-b4d4-42ba-a654-23fe65df32ee}</Project>
-      <Name>AutoFacPractice1.BL</Name>
-    </ProjectReference>
+    <Compile Include="UserProcessors\UserProcessor.cs" />
+    <Compile Include="UserSources\AdUserSource.cs" />
+    <Compile Include="UserSources\FileUserSource.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

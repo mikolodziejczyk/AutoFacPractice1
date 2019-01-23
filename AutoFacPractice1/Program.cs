@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoFacPractice1.BL;
+using AutoFacPractice1.BL.UserSources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,10 @@ namespace AutoFacPractice1
     {
         static void Main(string[] args)
         {
+
+            IUserSource userSource = new AdUserSource();
+            MainProcessor mainProcessor = new MainProcessor(userSource);
+            mainProcessor.Process();
         }
     }
 }
