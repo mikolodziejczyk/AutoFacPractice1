@@ -11,7 +11,7 @@ namespace AutoFacPractice1.BL.CompanyParsers
         public override string Parse(string userName)
         {
             string r = "";
-            if (userName.Length > 3) r = userName.Substring(userName.Length - 3, 1);
+            if (userName.Length > 3) r = userName.Substring(userName.Length - 2, 1);
             return r;
         }
     }
