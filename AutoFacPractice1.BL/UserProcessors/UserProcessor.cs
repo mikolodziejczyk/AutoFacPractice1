@@ -12,7 +12,7 @@ namespace AutoFacPractice1.BL.UserProcessors
     /// </summary>
     public class UserProcessor
     {
-        private readonly CompanyParser companyParser;
+        protected readonly CompanyParser companyParser;
 
         public UserProcessor(CompanyParser companyParser)
         {
