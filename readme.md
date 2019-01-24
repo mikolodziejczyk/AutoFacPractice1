@@ -26,3 +26,12 @@ Add backing field and a null check with VS.
 	a. Currently, the UserProcessor takes user (string) in the Process method. Refactor UserProcessor so that it accepts a string in constructor rather than in the Process() and keeps it in a class field; use VS to generate the field and null/whitespace check.
 	b. refactor AnotherUserProcessor accordingly; use the base constructor; adjust member access level
 	c. refactor MainProcessor so that it accepts delegate factory with the delegate that takes a parameter (userName), refactor the Process method accordingly.
+10. Delegate factories with multiple parameters of the same type
+	a. Refactor UserProcessor so that it takes also another string parameter, prefix (add the backing field, etc.) so that we have:
+	public UserProcessor(CompanyParser companyParser, string userName, string prefix)
+	Write this prefix somewhere in the Process()
+	b. What is the problem with Func<string, string, UserProcessor> delegate factory?
+	c. Create the factory delegate type in UserProcessor
+    d. Get this delegate type injected in the MainProcessor, use any value for prefix, test
+ 11. How to get an object injected when we don't know when it will be used (if at all) and it is expensive to create - overview
+  
