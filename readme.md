@@ -43,4 +43,4 @@ The repository is used in the About method.
     b. add the required startup code
 2. Refactor HomeController so that it takes MyRepository as the constructor parameter, keep the existing field.
    Configure AutoFac to provide MyRepository, test (/Home/About)
-   Configure MyRepository to be a singleton, test (the id in the repository should not increase in the consecutive calls)
+   Configure MyRepository to be a singleton, test (the id in the repository should not increase for the consecutive calls)
