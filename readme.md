@@ -33,5 +33,14 @@ Add backing field and a null check with VS.
 	b. What is the problem with Func<string, string, UserProcessor> delegate factory?
 	c. Create the factory delegate type in UserProcessor
     d. Get this delegate type injected in the MainProcessor, use any value for prefix, test
- 11. How to get an object injected when we don't know when it will be used (if at all) and it is expensive to create - overview
-  
+11. How to get an object injected when we don't know when it will be used (if at all) and it is expensive to create - overview
+ 
+You have MyMvcApplication. There is the Repositories.MyRepository class, it is instantiated in HomeController, as the myRepository property.
+The repository is used in the About method.
+
+1. Enable AutoFac for MyMvcApplication
+    a. add the required nuget packages
+    b. add the required startup code
+2. Refactor HomeController so that it takes MyRepository as the constructor parameter, keep the existing field.
+   Configure AutoFac to provide MyRepository, test (/Home/About)
+   Configure MyRepository to be a singleton, test (the id in the repository should not increase in the consecutive calls)
